@@ -1,0 +1,55 @@
+# Embedded Server configuration
+server:
+    port: 8000
+    servlet:
+        context-path: /${artifactId}/v1
+    compression:
+        enabled: true
+    tomcat:
+        uri-encoding: UTF-8
+    error:
+        include-stacktrace: never
+
+# Spring configuration
+spring:
+    application:
+        name: bxcode-microservice-template
+        version: 1.0.0
+        log: /logs
+    messages:
+        encoding: UTF-8
+    version: 2.4.0
+    main:
+        banner-mode: log
+        lazy-initialization: true
+    mvc:
+        converters:
+            preferred-json-mapper: jsonb
+    jpa:
+        open-in-view: false        # Get Rid of OIV Warning
+        show-sql: false
+        hibernate:
+            ddl-auto: create
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.H2Dialect
+                temp:
+                    use_jdbc_metadata_defaults: false
+        datasource:
+            jdbcUrl: jdbc:h2:mem:db;DB_CLOSE_DELAY=-1
+            url: jdbc:h2:mem:db;DB_CLOSE_DELAY=-1
+            username: sa
+            password: sa
+            driver-class-name: org.h2.Driver
+    datasource:
+        initialization-mode: never  # Prevent JPA from trying to Initialize
+        hikari:
+            connection-init-sql: SELECT 1
+            connection-test-query: SELECT 1
+            auto-commit: true
+            connection-timeout: 3000
+            idle-timeout: 600000
+            leak-detection-threshold: 45000
+            max-lifetime: 1800000
+            maximum-pool-size: 10
+            validation-timeout: 5000

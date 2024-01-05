@@ -1,5 +1,6 @@
-# Created by https://www.toptal.com/developers/gitignore/api/intellij+all,visualstudiocode,eclipse,maven
-# Edit at https://www.toptal.com/developers/gitignore?templates=intellij+all,visualstudiocode,eclipse,maven
+
+# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,intellij+all,eclipse,netbeans,maven,gradle
+# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,intellij+all,eclipse,netbeans,maven,gradle
 
 ### Eclipse ###
 .metadata
@@ -78,9 +79,6 @@ local.properties
 .idea/**/dictionaries
 .idea/**/shelf
 
-# AWS User-specific
-.idea/**/aws.xml
-
 # Generated files
 .idea/**/contentModel.xml
 
@@ -101,14 +99,14 @@ local.properties
 # When using Gradle or Maven with auto-import, you should exclude module files,
 # since they will be recreated, and may cause churn.  Uncomment if using
 # auto-import.
-.idea/artifacts
-.idea/compiler.xml
-.idea/jarRepositories.xml
-.idea/modules.xml
-.idea/*.iml
-.idea/modules
-*.iml
-*.ipr
+# .idea/artifacts
+# .idea/compiler.xml
+# .idea/jarRepositories.xml
+# .idea/modules.xml
+# .idea/*.iml
+# .idea/modules
+# *.iml
+# *.ipr
 
 # CMake
 cmake-build-*/
@@ -131,9 +129,6 @@ atlassian-ide-plugin.xml
 # Cursive Clojure plugin
 .idea/replstate.xml
 
-# SonarLint plugin
-.idea/sonarlint/
-
 # Crashlytics plugin (for Android Studio and IntelliJ)
 com_crashlytics_export_strings.xml
 crashlytics.properties
@@ -147,13 +142,20 @@ fabric.properties
 .idea/caches/build_file_checksums.ser
 
 ### Intellij+all Patch ###
-# Ignore everything but code style settings and run configurations
-# that are supposed to be shared within teams.
+# Ignores the whole .idea folder and all .iml files
+# See https://github.com/joeblau/gitignore.io/issues/186 and https://github.com/joeblau/gitignore.io/issues/360
 
-.idea/*
+.idea/
 
-!.idea/codeStyles
-!.idea/runConfigurations
+# Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-249601023
+
+*.iml
+modules.xml
+.idea/misc.xml
+*.ipr
+
+# Sonarlint plugin
+.idea/sonarlint
 
 ### Maven ###
 target/
@@ -168,38 +170,43 @@ buildNumber.properties
 # https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
 
-# Eclipse m2e generated files
-# Eclipse Core
-.project
-# JDT-specific (Eclipse Java Development Tools)
-.classpath
+### NetBeans ###
+**/nbproject/private/
+**/nbproject/Makefile-*.mk
+**/nbproject/Package-*.bash
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
 
 ### VisualStudioCode ###
 .vscode/*
-!.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
-!.vscode/extensions.json
-!.vscode/*.code-snippets
-
-# Local History for Visual Studio Code
-.history/
-
-# Built Visual Studio Code Extensions
-*.vsix
+*.code-workspace
 
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history
 .ionide
 
-# Support for Project snippet scope
-.vscode/*.code-snippets
+### Gradle ###
+.gradle
 
-# Ignore code-workspaces
-*.code-workspace
+# Ignore Gradle GUI config
+gradle-app.setting
 
-# End of https://www.toptal.com/developers/gitignore/api/intellij+all,visualstudiocode,eclipse,maven
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
 
-.idea/**
-testing-project/**
+# Cache of project
+.gradletasknamecache
+
+# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
+# gradle/wrapper/gradle-wrapper.properties
+
+### Gradle Patch ###
+**/build/
+
+# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,intellij+all,eclipse,netbeans,maven,gradle

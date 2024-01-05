@@ -1,0 +1,16 @@
+#set( $dollar = '$' )
+spring:
+    datasource:
+        url: ${dollar}{ENV_POSTGRESQL_URL:postgresql://localhost:5432/postgres?currentSchema=public}
+        username: ${dollar}{ENV_POSTGRESQL_USER_NAME:postgres}
+        password: ${dollar}{ENV_POSTGRESQL_PASSWORD:postgres}
+        driver-class-name: org.postgresql.Driver
+        database-encryption-enable: true
+    sql:
+        init:
+            platform: postgres
+
+# Logger configuration
+logging:
+    level:
+        root: INFO

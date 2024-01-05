@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.bxcode.archetypes.reactive</groupId>
+    <artifactId>archetype-api-bxcode-microservice</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>archetype-api-bxcode-microservice</name>
+    <description>archetype-api-bxcode-microservice</description>
+    <packaging>maven-archetype</packaging>
+
+    <properties>
+
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <encoding>UTF-8</encoding>
+        <project.build.sourceEncoding>${encoding}</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>${encoding}</project.reporting.outputEncoding>
+        <project.resources.sourceEncoding>${encoding}</project.resources.sourceEncoding>
+        <archetype.encoding>${encoding}</archetype.encoding>
+
+    </properties>
+
+    <developers>
+        <developer>
+            <id>bxcode</id>
+            <name>bxcode</name>
+            <email>bacsystem.sac.@gmail.com</email>
+            <organization>bxcode</organization>
+        </developer>
+    </developers>
+
+    <build>
+        <finalName>archetype-api-bxcode-microservice</finalName>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.archetype</groupId>
+                <artifactId>archetype-packaging</artifactId>
+                <version>3.2.1</version>
+            </extension>
+        </extensions>
+    </build>
+
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+
+        <repository>
+            <id>bacsystem-central</id>
+            <name>bacsystem central</name>
+            <url>http://localhost:8081/repository/bacsystem-central/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+
+    </repositories>
+
+    <distributionManagement>
+
+        <repository>
+            <id>releases</id>
+            <name>bacsystem-releases</name>
+            <uniqueVersion>true</uniqueVersion>
+            <url>http://localhost:8081/repository/bacsystem-releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>bacsystem-snapshots</name>
+            <uniqueVersion>true</uniqueVersion>
+            <url>http://localhost:8081/repository/bacsystem-snapshots/</url>
+        </snapshotRepository>
+
+    </distributionManagement>
+</project>
